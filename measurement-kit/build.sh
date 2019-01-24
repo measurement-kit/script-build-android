@@ -10,7 +10,7 @@ destdir=`pwd`/dist/$MKARCH
 (
   set -ex
   cd $srcdir
-  ./autogen.sh
+  ./autogen.sh -n
   # TODO(bassosimone): the way in which MK's configure works is such
   # that moved libtool libraries completely confuse it.\
   find $destdir -type f -name \*.la -exec rm {} \;
@@ -22,5 +22,5 @@ destdir=`pwd`/dist/$MKARCH
     --with-libcurl=$destdir --with-libmaxminddb=$destdir       \
     --disable-shared $CONFIGUREFLAGS
   make V=0
-  make DESTDIR=$destdir
+  make install DESTDIR=$destdir
 )
