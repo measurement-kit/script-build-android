@@ -13,7 +13,7 @@ export CXXFLAGS="-O2 -fPIC"
 export LD="$toolchain-ld"
 export MKARCH="arm64-v8a"
 export NM="$toolchain-nm"
-export PATH="$NDK/toolchains/llvm/prebuilt/$sysname/bin/:$PATH"
+export PATH="$NDK_ROOT/toolchains/llvm/prebuilt/$sysname/bin/:$PATH"
 export RANLIB="$toolchain-ranlib"
 export STRIP="$toolchain-strip"
 
