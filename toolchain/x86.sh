@@ -1,5 +1,6 @@
 #!/bin/sh -e
 toolchain=i686-linux-android
+sysname="`uname -s|tr [A-Z] [a-z]`-`uname -m`"
 
 export AR="$toolchain-ar"
 export AS="$toolchain-as"
@@ -12,7 +13,7 @@ export CXXFLAGS="-O2 -fPIC"
 export LD="$toolchain-ld"
 export MKARCH="x86"
 export NM="$toolchain-nm"
-export PATH="$NDK/toolchains/llvm/prebuilt/darwin-x86_64/bin/:$PATH"
+export PATH="$NDK/toolchains/llvm/prebuilt/$sysname/bin/:$PATH"
 export RANLIB="$toolchain-ranlib"
 export STRIP="$toolchain-strip"
 
