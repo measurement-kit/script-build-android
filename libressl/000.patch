@@ -1,0 +1,16 @@
+Linking fails because it cannot fail `-lpthread`. Use `-pthread` instead,
+which should cause the compiler to do the right thing (TM).
+
+diff --git a/m4/check-os-options.m4 b/m4/check-os-options.m4
+index 414e63d..bcbc9b7 100644
+--- a/m4/check-os-options.m4
++++ b/m4/check-os-options.m4
+@@ -80,7 +80,7 @@ char buf[1]; getentropy(buf, 1);
+ 		HOST_OS=linux
+ 		HOST_ABI=elf
+ 		CPPFLAGS="$CPPFLAGS -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE -D_GNU_SOURCE"
+-		AC_SUBST([PLATFORM_LDADD], ['-lpthread'])
++		AC_SUBST([PLATFORM_LDADD], ['-pthread'])
+ 		;;
+ 	*netbsd*)
+ 		HOST_OS=netbsd
