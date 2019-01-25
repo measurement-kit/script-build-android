@@ -17,7 +17,7 @@ destdir=`pwd`/dist/$MKARCH
   # assured that it will not complete because of bad connectivity.
   ./autogen.sh -n
   # TODO(bassosimone): the way in which MK's configure works is such
-  # that moved libtool libraries completely confuse it.\
+  # that moved libtool libraries completely confuse it.
   find $destdir -type f -name \*.la -exec rm {} \;
   # TODO(bassosimone): MK's configure is not able to handle the
   # presence of `-lz` yet, so we use this hack.
