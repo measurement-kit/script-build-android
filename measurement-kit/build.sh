@@ -22,6 +22,7 @@ destdir=`pwd`/dist/$MKARCH
   # TODO(bassosimone): MK's configure is not able to handle the
   # presence of `-lz` yet, so we use this hack.
   export LIBS="-lz"
+  export LDFLAGS="-static-libstdc++"
   ./configure --prefix=/ --disable-dependency-tracking         \
     --with-libevent=$destdir --with-openssl=$destdir           \
     --with-libcurl=$destdir --with-libmaxminddb=$destdir       \
