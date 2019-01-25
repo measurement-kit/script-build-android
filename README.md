@@ -51,7 +51,7 @@ Enter into the build directory
 
 ```sh
 cd ./build/$arch/$lib/$tarball_dir
-<do something here>
+$do_something_here
 ../../../../toolchain/$arch.sh $build_command
 ```
 
