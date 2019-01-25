@@ -27,12 +27,12 @@ Then rebuild everything with
 
 This will compile in `./build` and install in `./dist`.
 
-## Rebuilding a single lib for a specific arch
+### Rebuilding a single lib for a specific arch
 
 You may want to rebuild a single library for a specific arch with
 
 ```sh
-./toolchain/<name>.sh ./<lib>/build.sh
+./toolchain/$arch.sh ./$lib/build.sh
 ```
 
 For example
@@ -45,14 +45,14 @@ If this step fail, make sure first that `NDK_ROOT` is exported. While
 outer level scripts check that, `./toolchain` scripts do not. Hence
 the build _may_ just be failing because the compiler couldn't be found.
 
-## Restarting or tweaking a specific build
+### Restarting or tweaking a specific build
 
 Enter into the build directory
 
 ```sh
-cd ./build/<arch>/<lib>/<tarball-dir>
+cd ./build/$arch/$lib/<tarball-dir>
 <do something here>
-../../../../toolchain/<arch>.sh <build-command>
+../../../../toolchain/$arch.sh $build_command
 ```
 
 For example
@@ -76,7 +76,7 @@ more confidence that there will be no undefined symbols etc.
 Then run
 
 ```sh
-./script/smoke-test.sh <arch>
+./script/smoke-test.sh $arch
 ```
 
 The objective of this step is to make sure that the newly compiled
