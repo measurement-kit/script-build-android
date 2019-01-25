@@ -25,7 +25,7 @@ destdir=`pwd`/dist/$MKARCH
   # We want to smoke test the MK executable on device. So, let's force
   # static linking so we don't need to copy over libc++_shared.so.
   export LDFLAGS="-static-libstdc++"
-  ./configure --prefix=/ --disable-dependency-tracking         \
+  ./configure --prefix=/                                       \
     --with-libevent=$destdir --with-openssl=$destdir           \
     --with-libcurl=$destdir --with-libmaxminddb=$destdir       \
     --disable-shared $CONFIGUREFLAGS
