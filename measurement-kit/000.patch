@@ -1,0 +1,18 @@
+Allow semi-automatic on-device testing until the MK binary is
+able to get an arbitrary CA bundle from command line.
+
+diff --git a/src/measurement_kit/utils.cpp b/src/measurement_kit/utils.cpp
+index 666b98c..6cb8cd4 100644
+--- a/src/measurement_kit/utils.cpp
++++ b/src/measurement_kit/utils.cpp
+@@ -6,7 +6,9 @@
+ #include "config.h" // For MK_CA_BUNDLE
+ #endif
+ #ifndef MK_CA_BUNDLE
+-#define MK_CA_BUNDLE "" // Empty
++// TODO(bassosimone): the following is a hack to enable on-device testing
++// but the proper way would actually be to fix MK
++#define MK_CA_BUNDLE "ca-cert.pem"
+ #endif
+ 
+ #include <inttypes.h>
