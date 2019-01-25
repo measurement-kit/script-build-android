@@ -50,7 +50,7 @@ the build _may_ just be failing because the compiler couldn't be found.
 Enter into the build directory
 
 ```sh
-cd ./build/$arch/$lib/<tarball-dir>
+cd ./build/$arch/$lib/$tarball_dir
 <do something here>
 ../../../../toolchain/$arch.sh $build_command
 ```
