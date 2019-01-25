@@ -83,3 +83,17 @@ The objective of this step is to make sure that the newly compiled
 code is not going to cause issues on old Android and possibly on
 a variety of architectures, _before_ publishing the binaries. Hence
 we can spot problems or be more confident _earlier_.
+
+## Package for distribution
+
+Make sure you update the `VERSION file.
+
+Then, run this script
+
+```sh
+./script/make-android-dist.sh
+```
+
+It will create a tarball in the toplevel directory and update `SHA256SUMS`.
+
+Then, commit, tag, push, make a GitHub release, and upload the tarball.
