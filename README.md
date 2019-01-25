@@ -87,7 +87,7 @@ Hence we can spot problems or be more confident _earlier_.
 
 ## Package for distribution
 
-Make sure you update the `VERSION file.
+Make sure you update the `VERSION` file.
 
 Then, run this script
 
