@@ -4,7 +4,7 @@ if [ "$ANDROID_NDK_ROOT" = "" ]; then
   exit 1
 fi
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 [package...]" 1>&2
+  echo "Usage: $0 [all|package...]" 1>&2
   exit 1
 else
   allpkgs="$@"
