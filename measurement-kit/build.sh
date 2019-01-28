@@ -16,9 +16,6 @@ destdir=`pwd`/dist/$MKARCH
   # build to download any asset, so that, once it is started, we can rest
   # assured that it will not complete because of bad connectivity.
   ./autogen.sh -n
-  # TODO(bassosimone): the way in which MK's configure works is such
-  # that moved libtool libraries completely confuse it.
-  find $destdir -type f -name \*.la -exec rm {} \;
   # TODO(bassosimone): MK's configure is not able to handle the
   # presence of `-lz` yet, so we use this hack.
   export LIBS="-lz"
@@ -31,4 +28,7 @@ destdir=`pwd`/dist/$MKARCH
     --disable-shared $CONFIGUREFLAGS
   make V=0
   make install DESTDIR=$destdir
+  # Remove everything we don't need
+  rm -rf $destdir/lib/libmeasurement_kit.la
+  rm -rf $destdir/include/measurement_kit/README.md
 )

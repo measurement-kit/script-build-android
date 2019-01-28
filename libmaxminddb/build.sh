@@ -14,4 +14,8 @@ destdir=`pwd`/dist/$MKARCH
   ./configure --prefix=/ --disable-shared --disable-tests $CONFIGUREFLAGS
   make V=0
   make install DESTDIR=$destdir
+  # Remove everything we don't need and that may confuse subsequent builds
+  rm -rf $destdir/lib/pkgconfig
+  rm -rf $destdir/lib/libmaxminddb.la
+  rm -rf $destdir/share
 )

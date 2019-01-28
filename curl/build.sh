@@ -39,4 +39,8 @@ destdir=`pwd`/dist/$MKARCH
      $CONFIGUREFLAGS
   make V=0
   make install DESTDIR=$destdir
+  # Remove everything we don't need and that may confuse subsequent builds
+  rm -rf $destdir/lib/libcurl.la
+  rm -rf $destdir/lib/pkgconfig
+  rm -rf $destdir/share
 )

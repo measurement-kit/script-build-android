@@ -21,4 +21,13 @@ destdir=`pwd`/dist/$MKARCH
     --disable-libevent-regress --disable-clock-gettime $CONFIGUREFLAGS
   make V=0
   make install DESTDIR=$destdir
+  # Remove everything we don't need and may confuse subsequent builds
+  rm -rf $destdir/bin
+  rm -rf $destdir/lib/pkgconfig
+  rm -rf $destdir/lib/libevent_openssl.la
+  rm -rf $destdir/lib/libevent_extra.la
+  rm -rf $destdir/lib/libevent.la
+  rm -rf $destdir/lib/libevent.a
+  rm -rf $destdir/lib/libevent_core.la
+  rm -rf $destdir/lib/libevent_pthreads.la
 )
