@@ -22,10 +22,18 @@ This will download packages tarballs in `./pkg`.
 Then rebuild everything with
 
 ```sh
-./script/build.sh
+./script/build.sh all
 ```
 
-This will compile in `./build` and install in `./dist`.
+This will compile in `./build` and install in `./dist`. Instead of `all`
+you can also pass the name of a specific library. For example
+
+```sh
+./script/build.sh curl
+```
+
+In that case, make sure you also recompile all libs that depend on
+the library that you are currently recompiling.
 
 ### Rebuilding a single lib for a specific arch
 
