@@ -16,7 +16,7 @@ export CXXFLAGS="-O2 -fPIC $extraflags"
 export LD="$tool-ld"
 export MKARCH="armeabi-v7a"
 export NM="$tool-nm"
-export PATH="$NDK_ROOT/toolchains/llvm/prebuilt/$sysname/bin/:$PATH"
+export PATH="$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/$sysname/bin/:$PATH"
 export RANLIB="$tool-ranlib"
 export STRIP="$tool-strip"
 

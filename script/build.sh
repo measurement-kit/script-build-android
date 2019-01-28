@@ -1,6 +1,6 @@
 #!/bin/sh -e
-if [ "$NDK_ROOT" = "" ]; then
-  echo "FATAL: NDK_ROOT is not set" 1>&2
+if [ "$ANDROID_NDK_ROOT" = "" ]; then
+  echo "FATAL: ANDROID_NDK_ROOT is not set" 1>&2
   exit 1
 fi
 if [ $# -eq 0 ]; then

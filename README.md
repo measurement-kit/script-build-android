@@ -4,7 +4,7 @@ Make sure that you have the NDK installed. Let us know the location
 in which it is installed by using
 
 ```sh
-export NDK_ROOT=/path/to/NDK  # $HOME/Library/Android/sdk/ndk-bundle on macOS
+export ANDROID_NDK_ROOT=/path/to/NDK  # $HOME/Library/Android/sdk/ndk-bundle on macOS
 ```
 
 ## Downloading tarballs
@@ -49,7 +49,7 @@ For example
 ./toolchain/arm64.sh ./measurement-kit/build.sh
 ```
 
-If this step fail, make sure first that `NDK_ROOT` is exported. While
+If this step fail, make sure first that `ANDROID_NDK_ROOT` is exported. While
 outer level scripts check that, `./toolchain` scripts do not. Hence
 the build _may_ just be failing because the compiler couldn't be found.
 
@@ -71,7 +71,7 @@ vi src/measurement_kit/utils.cpp
 ../../../../toolchain/arm64.sh make
 ```
 
-Again, this will fail weirdly if `NDK_ROOT` is not set.
+Again, this will fail weirdly if `ANDROID_NDK_ROOT` is not set.
 
 ## Smoke testing
 
