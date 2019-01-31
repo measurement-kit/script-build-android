@@ -9,7 +9,7 @@ for arch in `ls $d`; do
                include/evhttp.h include/evrpc.h include/evutil.h  \
                include/tls.h lib/libevent.a lib/libtls.a          \
                lib/pkgconfig; do
-    rm -r $d/$arch/$entry
+    rm -rf $d/$arch/$entry
   done
 done
 # Really make sure that only what we care about survives
