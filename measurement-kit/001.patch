@@ -1,13 +1,27 @@
-diff --git a/src/libmeasurement_kit/common/libevent_reactor.hpp b/src/libmeasurement_kit/common/libevent_reactor.hpp
-index 9437d81..3b3aa38 100644
---- a/src/libmeasurement_kit/common/libevent_reactor.hpp
-+++ b/src/libmeasurement_kit/common/libevent_reactor.hpp
-@@ -139,7 +139,7 @@ class LibeventReactor : public Reactor, public NonCopyable, public NonMovable {
-     // ## Call later
+diff --git a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
+index 5373ebb5..3a5128a9 100644
+--- a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
++++ b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
+@@ -97,10 +97,12 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
+      * Move everything down such that there is always just one function in
+      * one specific thread having ownership of the state
+      */
++    /*
+     reactor->call_in_thread(logger, [
+         name = std::move(name), hints = std::move(hints),
+         reactor, logger, cb = std::move(cb)
+     ]() {
++    */
+         addrinfo *rp = nullptr;
+         Error error = getaddrinfo_async_map_error(
+             getaddrinfo(name.c_str(), nullptr, &hints, &rp));
+@@ -131,7 +133,9 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
+             cb = std::move(cb), error = std::move(error),
+             answers = std::move(answers)
+         ]() { cb(error, answers); });
++    /*
+     });
++    */
+ }
  
-     void call_in_thread(SharedPtr<Logger> logger, Callback<> &&cb) override {
--        worker.call_in_thread(logger, std::move(cb));
-+        cb();
-     }
- 
-     void call_soon(Callback<> &&cb) override { call_later(0.0, std::move(cb)); }
+ } // namespace dns
