@@ -1,12 +1,13 @@
-diff --git a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
-index 5373ebb5..2f89c35b 100644
---- a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
-+++ b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
-@@ -101,6 +101,7 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
-         name = std::move(name), hints = std::move(hints),
-         reactor, logger, cb = std::move(cb)
-     ]() {
-+        logger->info("about to call getaddrinfo for '%s'", name.c_str());
-         addrinfo *rp = nullptr;
-         Error error = getaddrinfo_async_map_error(
-             getaddrinfo(name.c_str(), nullptr, &hints, &rp));
+diff --git a/src/libmeasurement_kit/ooni/templates.cpp b/src/libmeasurement_kit/ooni/templates.cpp
+index 6787f89b..8f9b661f 100644
+--- a/src/libmeasurement_kit/ooni/templates.cpp
++++ b/src/libmeasurement_kit/ooni/templates.cpp
+@@ -93,7 +93,7 @@ void dns_query(SharedPtr<nlohmann::json> entry, dns::QueryType query_type,
+                    cb(error, message);
+                    logger->debug("dns_test: callback called");
+                },
+-               options, reactor);
++               options, reactor, logger);
+ }
+ 
+ void http_request(SharedPtr<nlohmann::json> entry, Settings settings, http::Headers headers,
