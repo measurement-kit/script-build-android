@@ -1,27 +1,12 @@
 diff --git a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
-index 5373ebb5..3a5128a9 100644
+index 5373ebb5..2f89c35b 100644
 --- a/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
 +++ b/src/libmeasurement_kit/dns/getaddrinfo_async.hpp
-@@ -97,10 +97,12 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
-      * Move everything down such that there is always just one function in
-      * one specific thread having ownership of the state
-      */
-+    /*
-     reactor->call_in_thread(logger, [
+@@ -101,6 +101,7 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
          name = std::move(name), hints = std::move(hints),
          reactor, logger, cb = std::move(cb)
      ]() {
-+    */
++        logger->info("about to call getaddrinfo for '%s'", name.c_str());
          addrinfo *rp = nullptr;
          Error error = getaddrinfo_async_map_error(
              getaddrinfo(name.c_str(), nullptr, &hints, &rp));
-@@ -131,7 +133,9 @@ void getaddrinfo_async(std::string name, addrinfo hints, SharedPtr<Reactor> reac
-             cb = std::move(cb), error = std::move(error),
-             answers = std::move(answers)
-         ]() { cb(error, answers); });
-+    /*
-     });
-+    */
- }
- 
- } // namespace dns
