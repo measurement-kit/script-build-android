@@ -1,0 +1,13 @@
+diff --git a/src/libmeasurement_kit/common/libevent_reactor.hpp b/src/libmeasurement_kit/common/libevent_reactor.hpp
+index 9437d81..3b3aa38 100644
+--- a/src/libmeasurement_kit/common/libevent_reactor.hpp
++++ b/src/libmeasurement_kit/common/libevent_reactor.hpp
+@@ -139,7 +139,7 @@ class LibeventReactor : public Reactor, public NonCopyable, public NonMovable {
+     // ## Call later
+ 
+     void call_in_thread(SharedPtr<Logger> logger, Callback<> &&cb) override {
+-        worker.call_in_thread(logger, std::move(cb));
++        cb();
+     }
+ 
+     void call_soon(Callback<> &&cb) override { call_later(0.0, std::move(cb)); }
