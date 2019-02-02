@@ -8,7 +8,7 @@ $ANDROID_HOME/platform-tools/adb push ./dist/$arch/bin/measurement_kit /data
 $ANDROID_HOME/platform-tools/adb push ./testdata/ca-bundle.pem /data
 for cmd in ndt 'web_connectivity -u http://www.google.com'; do
   $ANDROID_HOME/platform-tools/adb shell                                       \
-    "cd /data && ./measurement_kit --ca-bundle-path=ca-bundle.pem -v $cmd"
+    "cd /data && ./measurement_kit --ca-bundle-path=ca-bundle.pem $cmd"
 done
 $ANDROID_HOME/platform-tools/adb shell rm /data/measurement_kit
 $ANDROID_HOME/platform-tools/adb shell rm /data/ca-bundle.pem
