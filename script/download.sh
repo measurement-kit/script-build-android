@@ -1,5 +1,14 @@
-#!/bin/sh -ex
-allpkgs="libmaxminddb libressl libevent curl measurement-kit"
+#!/bin/sh -e
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 [all|package...]" 1>&2
+  exit 1
+else
+  allpkgs="$@"
+  if [ $allpkgs = "all" ]; then
+    allpkgs="libmaxminddb libressl libevent curl measurement-kit"
+  fi
+fi
+set -x
 for dir in $allpkgs; do
   source ./$dir/download.sh
   rm -rf ./pkg/$dir
