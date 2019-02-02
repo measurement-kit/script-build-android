@@ -5,15 +5,11 @@ builddir=./build/$MKARCH/$name
 rm -rf $builddir
 install -d $builddir
 tar -C $builddir -xzf $tarball
-patch000=`pwd`/$name/000.patch
-patch001=`pwd`/$name/001.patch
-srcdir=$builddir/$name-0.9.2
+srcdir=$builddir/$name-0.9.3
 destdir=`pwd`/dist/$MKARCH
 (
   set -ex
   cd $srcdir
-  patch -Np1 -i $patch000
-  patch -Np1 -i $patch001
   # Note: the `-n` prevents MK from downloading assets. We do not want the
   # build to download any asset, so that, once it is started, we can rest
   # assured that it will not complete because of bad connectivity.
