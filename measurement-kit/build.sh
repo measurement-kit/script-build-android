@@ -5,7 +5,7 @@ builddir=./build/$MKARCH/$name
 rm -rf $builddir
 install -d $builddir
 tar -C $builddir -xzf $tarball
-srcdir=$builddir/$name-0.9.3
+srcdir=$builddir/$name-0.9.4
 destdir=`pwd`/dist/$MKARCH
 (
   set -ex

@@ -5,7 +5,7 @@ builddir=./build/$MKARCH/$name
 rm -rf $builddir
 install -d $builddir
 tar -C $builddir -xzf $tarball
-srcdir=$builddir/curl-curl-7_63_0
+srcdir=$builddir/curl-curl-7_64_0
 destdir=`pwd`/dist/$MKARCH
 (
   set -ex
