@@ -46,7 +46,7 @@ git clean -dffx
 Then download the tarballs with
 
 ```sh
-./script/download.sh
+./script/download.sh all
 ```
 
 This will download packages tarballs in `./pkg`.
