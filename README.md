@@ -6,7 +6,8 @@ use cases of these scripts, along with details.
 
 ## Tell the scripts about the NDK
 
-Make sure that you have the NDK installed. Let us know the location
+Make sure that you have the NDK installed. Make sure that you are using
+the latest version using the proper channel. Then, let us know the location
 in which it is installed by using
 
 ```sh
