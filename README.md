@@ -23,7 +23,8 @@ check that by looking into all the download scripts with:
 vi `find . -type f -name download.sh | grep -v ./script`
 ```
 
-If any dependency has been updated, fix the URL and the SHA256.
+If any dependency has been updated, fix the URL and the SHA256. Then also
+make sure that the corresponding build script is updated.
 
 ## Check the output version
 
