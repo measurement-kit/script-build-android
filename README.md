@@ -95,8 +95,16 @@ Then, run this script
 
 It will create a tarball in the toplevel directory and update `SHA256SUMS`.
 
-Then, commit, tag, push, make a GitHub release, and upload the tarball
-as part of the GitHub release.
+Then:
+
+- [ ] commit
+- [ ] tag
+- [ ] sign
+- [ ] push
+- [ ] make a GitHub release
+- [ ] upload the tarball
+- [ ] upload the build logs
+- [ ] upload the test logs
 
 ## Less common usage
 
