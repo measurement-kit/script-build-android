@@ -98,8 +98,7 @@ It will create a tarball in the toplevel directory and update `SHA256SUMS`.
 Then:
 
 - [ ] commit
-- [ ] tag
-- [ ] sign
+- [ ] tag and sign the tag
 - [ ] push
 - [ ] make a GitHub release
 - [ ] upload the tarball
