@@ -74,7 +74,7 @@ more confidence that there will be no undefined symbols etc.
 Then run
 
 ```sh
-./script/smoke-test.sh $arch
+./script/smoke-test.sh $arch 2>&1 | tee $arch.txt
 ```
 
 The objective of this step is to make sure that the newly compiled
