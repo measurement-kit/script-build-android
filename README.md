@@ -58,7 +58,7 @@ This will download packages tarballs in `./pkg`.
 Then rebuild everything with
 
 ```sh
-./script/build.sh all
+./script/build.sh all 2>&1 | tee BUILD.txt
 ```
 
 This will compile in `./build` and install in `./dist`.

@@ -1,3 +1,3 @@
 #!/bin/sh -e
-url=https://github.com/measurement-kit/measurement-kit/archive/v0.10.1.tar.gz
-sha256=4caf856ebbb28633c7593a9b5b8ee79f0c0436d05ae7391cc59e8d72b260911a
+url=https://github.com/measurement-kit/measurement-kit/archive/v0.10.2.tar.gz
+sha256=580b036aa1d1b9c85b659ef1bb710ea64f9501aaa3394cc4e397a6dde10eebfa

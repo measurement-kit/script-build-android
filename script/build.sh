@@ -8,7 +8,7 @@ if [ $# -eq 0 ]; then
   exit 1
 else
   allpkgs="$@"
-  if [ $allpkgs = "all" ]; then
+  if [ "$allpkgs" = "all" ]; then
     allpkgs="libmaxminddb libressl libevent curl measurement-kit"
   fi
 fi
