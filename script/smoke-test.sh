@@ -6,6 +6,7 @@ arch=$1
 $ANDROID_HOME/platform-tools/adb root
 $ANDROID_HOME/platform-tools/adb push ./dist/$arch/bin/measurement_kit /data
 $ANDROID_HOME/platform-tools/adb push ./testdata/ca-bundle.pem /data
+$ANDROID_HOME/platform-tools/adb shell "cd /data && ./measurement_kit --version"
 for cmd in ndt 'web_connectivity -u http://www.google.com'; do
   $ANDROID_HOME/platform-tools/adb shell                                       \
     "cd /data && ./measurement_kit --ca-bundle-path=ca-bundle.pem $cmd"
