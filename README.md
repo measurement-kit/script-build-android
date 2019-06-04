@@ -1,5 +1,9 @@
 # Android build scripts
 
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️: This repository is now unused. We use
+https://github.com/measurement-kit/homebrew-measurement-kit now
+for cross building for Android.
+
 This repository contains MK Android build scripts. The rest of this
 document describes the vanilla build procedure and other less common
 use cases of these scripts, along with details.
